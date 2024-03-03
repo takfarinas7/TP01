@@ -1,6 +1,11 @@
-#addTask{
-    background-color: rebeccapurple;
-    color: gold;
+#addTask {
+    background-color: rgb(27, 36, 119);
+    color: rgb(233, 247, 235);
+    transition: background-color 0.3s;
+}
+
+#addTask:hover {
+    background-color: rgb(47, 168, 16);
 }
 
 .sidebar {
@@ -18,55 +23,81 @@
     left: 0;
 }
 
-.w3-sidebar{height:100%;width:200px;background-color:rgb(241, 227, 227);position:fixed!important;z-index:1;overflow:none}
+.w3-sidebar{height:100%;width:200px;    background: linear-gradient(to bottom, #333a79, #01013a);position:fixed!important;z-index:1;overflow:none}
 .w3-bar-block .w3-bar-item{width:100%;display:block;padding:8px 16px;text-align:left;border:none;white-space:normal;float:none;outline:0}
 .w3-bar-block.w3-center .w3-bar-item{text-align:center}.w3-block{display:block;width:100%}
 
 #div1{
-    background-color: #a1a73d;
+    background-color: rgb(5, 14, 58);
     margin-bottom: 5px;
     margin-top: 5px;
 }
 #div2{
-    background-color: #afb634;
+    background-color: rgb(5, 14, 58);
     margin-bottom: 5px;
 }
 #div3{
-    background-color: rgb(195, 202, 65);
+    background-color: rgb(5, 14, 58);
     margin-bottom: 5px;
 }
 
 body {
-    background-color: rgb(150, 148, 148);
+    background-color: rgb(5, 14, 58);
     font-family: Arial, sans-serif;
    }
    .container {
-    max-width: 400px;
+    max-width: 700px;
     margin: 50px auto;
     padding: 20px;
-    border: 1px solid gold;
+    border: 1px solid rgb(133, 133, 141);
     border-radius: 5px;
-    background-color: rgb(153, 51, 136);
-    color: gold;
+    background: linear-gradient(to bottom, #333a79, #01013a);
+    color: rgb(255, 255, 255);
    }
    input{
     background: rgb(253, 253, 253);
-    color: gold;
+    color: rgb(0, 0, 0);
+    margin-top: 30px;
+    font-size: large;
+    border-radius: 10px;
    }
    ::placeholder{
     color: rgb(39, 39, 34);
     opacity: 0.7;
    }
    button{
-    background-color: #a1a73d;
-    color: #000080;
+    background-color: #0c0149;
+    color: #ffffff;
+    transition: background-color 0.3s;
+
    }
 .centrerhaut{
     text-align: center;
 }
-#taskDone{
+
+#taskDone {
     text-decoration: line-through;
     opacity: 0.7;
+    font-size: 50px;
 }
 
+#clearAll {
+    margin-left: 252px;
+    
+}
 
+h1 {
+    color: white;
+    font-size: 40px;
+    margin-bottom: 4px;
+}
+
+#clearAll:hover {
+    background-color: rgb(199, 0, 0);
+}
+#div1,
+#div2,
+#div3,
+a {
+    color: white;
+}

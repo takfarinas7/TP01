@@ -1,11 +1,18 @@
+body{
+  background: linear-gradient(to bottom, #000000, #0e0e7a);
+  height: 80vh;
+}
+
 #divParent{
-  background-color: #31b5ac;
-  width: 400px;
+  background-color: #03041f;
+  width: 600px;
   height: 400px;
   margin: auto;
   margin-top: 200px;
-  padding-top: 150px;
-  padding-left: 100px;
+  padding-top: 120px;
+  padding-left: 180px;
+  border-radius: 50px;
+  
 }
 
 /********************************************************** CSS signup *****************************************************/
@@ -23,10 +30,14 @@ input[type=text], input[type=password] {
 }
 
 #butInscription{
-  background-color: #c3cb20;
+  background-color: #0b2968;
   border-color: rgb(90, 80, 80);
-  border-style: solid;
+  border-style:ridge;
   border-width: 3px;
+  margin-left: 70px;
+  display: block;
+  font-size: large;
+  margin-bottom: 20px;
 }
 
 /* Add a background color when the inputs get focus */
@@ -41,7 +52,7 @@ button {
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
-  border: none;
+  border-radius: 50px;
   cursor: pointer;
   width: 100%;
   opacity: 0.9;
@@ -49,8 +60,12 @@ button {
 
 button:hover {
   opacity:1;
+  transition: 0.5s;
 }
 
+button:not(:focus) {
+  transition: 0.5s;
+}
 /* Extra styles for the cancel button */
 .cancelbtn {
   padding: 14px 20px;
@@ -138,10 +153,14 @@ input[type=text], input[type=password] {
 }
 
 #butConnexion{
-  background-color: #8c9217;
+  background-color: #0b2968;
   border-color: rgb(90, 80, 80);
-  border-style: solid;
+  border-style:ridge;
   border-width: 3px;
+  margin-left: 58px;
+  display: block;
+  margin-top: 20px;
+  font-size: large;
 }
 
 /* Set a style for all buttons */
@@ -150,13 +169,16 @@ button {
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
-  border: none;
+  border-radius: 50px;
   cursor: pointer;
   width: 100%;
+  margin-left: 90px;
 }
 
 button:hover {
   opacity: 0.8;
+  transition: 0.5s;
+  transform: scale(1.2);
 }
 
 /* Extra styles for the cancel button */

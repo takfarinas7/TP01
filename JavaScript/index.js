@@ -1,29 +1,38 @@
 ////////////////// Obtenez le modal d'inscription ///////////////////////
-function userInfo (){
+function registerUser() {
+  // elle recupere la valeur qui est stocker dans l element input    
+  const userName = document.getElementById("UserName").value;
+  const passWord = document.getElementById("PassWord").value;
 
-  // Todo
-  document.location='accueil.html';
+ localStorage.setItem("user", userName);
+ localStorage.setItem("password",passWord);
+
+
 }
 
 
 
-// ////////////////// Obtenez le modal d'inscription ///////////////////////
-// var modal = document.getElementById('id01');
+// enregistrer les infos du user deans le localStorage
+function saveLoginLocalS(event) {
+  event.preventDefault();
+  // elle recupere la valeur qui est stocker dans l element input    
+  const userName = document.getElementById("user_name").value;
+  const passWord = document.getElementById("pswd").value;
 
-// // Lorsque l'utilisateur clique n'importe où en dehors du modal, fermez-le
-// window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// }
+  const userNameC = localStorage.getItem("user");
+  const passWordC = localStorage.getItem("password");
 
 
-// ///////////////// Obtenez le modal de connexion //////////////////////////
-// var modal2 = document.getElementById('id02');
+  if (userName === userNameC && passWord === passWordC) {
+    // alert("done")
+    window.location.replace("acceuil.html");
+  } else {
+    alert("Erreur");
+  }
+  
 
-// // Lorsque l'utilisateur clique n'importe où en dehors du modal, fermez-le
-// window.onclick = function(event) {
-//     if (event.target == modal2) {
-//         modal.style.display = "none";
-//     }
-// }
+  // window.location.href = ("../acceuil.html");
+
+ 
+}
+

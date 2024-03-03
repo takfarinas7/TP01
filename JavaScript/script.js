@@ -11,7 +11,7 @@ function save(){
 }
 
 
-
+const addGroupBtn = document.getElementById("addGroupBtn");
 
 const taskInput = document.getElementById("taskInput") ;
 
@@ -57,7 +57,7 @@ function addTask() {
 
     const doneBtn = document.createElement("img");
 
-    doneBtn.setAttribute("src", "./Images/icons8-checkmark-50.png");
+    doneBtn.setAttribute("src", "./img/icons8-checkmark-50.png");
     doneBtn.setAttribute('height', '18px');
     doneBtn.setAttribute('width', '18px');
 
@@ -68,7 +68,7 @@ function addTask() {
 
     const editBtn = document.createElement("img");
 
-    editBtn.setAttribute("src", "./Images/icons8-edit-file-50.png");
+    editBtn.setAttribute("src", "./img/icons8-edit-file-50.png");
     editBtn.setAttribute('height', '18px');
     editBtn.setAttribute('width', '18px');
 
@@ -81,7 +81,7 @@ function addTask() {
 
     const deleteBtn = document.createElement("img");
 
-    deleteBtn.setAttribute("src", "./Images/icons8-delete-60.png");
+    deleteBtn.setAttribute("src", "./img/icons8-delete-60.png");
     deleteBtn.setAttribute('height', '18px');
     deleteBtn.setAttribute('width', '18px');
 
@@ -105,4 +105,29 @@ localStorage.setItem(task.concat(i), (taskText), i++)
 clearAll.addEventListener("click", () => {
     localStorage.clear()
 })
+
+
+
+function trierTâches() { 
+   // fonction qui trie les tâches par ordre alphabétique dans la taskList 
+    let taskList = document.getElementById('taskList');
+
+    let tasks = Array.from(taskList.children);
+
+    //Trie le tableau en fonction du contenu textuel des éléments de la liste
+    tasks.sort((a, b) => a.textContent.trim().localeCompare(b.textContent.trim()));
+
+    // supprime les taches de la liste de tache
+    while (taskList.firstChild) {
+        taskList.firstChild.remove();
+    }
+
+    // Ajouter les tâches triées à la liste des tâches
+    for (let task of tasks) {
+        taskList.appendChild(task);
+    }
+
+}
+
+
 }

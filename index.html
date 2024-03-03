@@ -21,13 +21,13 @@
         <p>Veuillez remplir ce formulaire pour créer un compte.</p>
         <hr>
         <label for="email"><b>E-mail</b></label>
-        <input type="text" placeholder="Entrez votre e-mail" name="email" required>
+        <input id="UserName" type="text" placeholder="Entrez votre e-mail" name="email" required>
 
         <label for="psw"><b>Mot de passe</b></label>
-        <input type="password" placeholder="Entrer le mot de passe" name="psw" required>
+        <input id="PassWord"   type="password" placeholder="Entrer le mot de passe" name="psw" required>
 
         <label for="psw-repeat"><b>Répéter le mot de passe</b></label>
-        <input type="password" placeholder="Répéter le mot de passe" name="psw-repeat" required>
+        <input id="mdpConfirm" type="password" placeholder="Répéter le mot de passe" name="psw-repeat" required>
         
         <label>
             <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Se souvenir de moi
@@ -37,7 +37,7 @@
 
         <div class="clearfix">
             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-            <button type="submit" class="signupbtn">S'inscrire</button>
+            <button type="submit" class="signupbtn" onclick=" registerUser()">S'inscrire</button>
         </div>
         </div>
     </form>
@@ -56,15 +56,16 @@
 
         <div class="container">
         <label for="uname"><b>Nom d'utilisateur</b></label>
-        <input type="text" placeholder="Saisissez votre nom d'utilisateur" name="uname" required>
+        <input id="user_name" type="text" placeholder="Saisissez votre nom d'utilisateur" name="uname" required>
         <label for="psw"><b>Mot de passe</b></label>
-        <input type="password" placeholder="Entrer le mot de passe" name="psw" required>
+        <input id="pswd" type="password" placeholder="Entrer le mot de passe" name="psw" required>
         <!-- <a href="accueil.html">
             <button type="submit" onclick="window.location.href==accueil.html">Login</button>
         </a> -->
-        </div>
+        
+    </div>
 
-        <button id="sub" onclick="userInfo()">Se connecter</button>
+        <button id="sub" onclick="saveLoginLocalS(event)">Se connecter</button>
 
         <label>
             <input type="checkbox" checked="checked" name="remember"> Souviens-toi de moi
@@ -75,9 +76,34 @@
             <span class="psw">Mot de passe<a href="#"> oublié?</a></span>  
         </div>
     </form>
-
+    
     </div>
 </div>
-    <script src="./JavaScript/index.js"></script>
+    <script src="../JavaScript/index.js"></script>
+    <script>
+        function saveLoginLocalS(event) {
+  event.preventDefault();
+  // elle recupere la valeur qui est stocker dans l element input    
+  const userName = document.getElementById("user_name").value;
+  const passWord = document.getElementById("pswd").value;
+
+  const userNameC = localStorage.getItem("user");
+  const passWordC = localStorage.getItem("password");
+
+
+  if (userName === userNameC && passWord === passWordC) {
+    // alert("done")
+    window.location.replace("accueil.html");
+  } else {
+    alert("Erreur");
+  }
+  
+
+  // window.location.href = ("../acceuil.html");
+
+ 
+}
+
+    </script>
     </body>
 </html>
